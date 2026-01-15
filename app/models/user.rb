@@ -21,4 +21,10 @@ class User < ApplicationRecord
 	def lastname
 		self.name.split(/\s/).last
 	end
+
+	# get city name
+	def city_name
+		#City.find(city_id).name unless city_id.nil?
+		city_id.nil? ? 'No data' : City.find(city_id).name
+	end
 end

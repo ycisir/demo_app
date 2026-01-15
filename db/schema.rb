@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_15_165602) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_15_173009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -24,10 +28,10 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_15_165602) do
 
   create_table "users", force: :cascade do |t|
     t.integer "age"
-    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender"
     t.string "name"
+    t.integer "city_id"
   end
 end
