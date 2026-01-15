@@ -1,0 +1,33 @@
+<h1>New User</h1>
+
+<%= form_for :user, url: 'create_user' do |f| %>
+	<div>
+		<%= f.label "First name" %>
+		<%= f.text_field :first_name %>
+	</div>
+	<br>
+	<div>
+		<%= f.label "Last name" %>
+		<%= f.text_field :last_name %>
+	</div>
+	<br>
+	<div>
+		<%= f.label "Age" %>
+		<%= f.text_field :age %>
+	</div>
+	<br>
+	<div>
+		<%= f.label "City" %>
+		<%= f.text_field :city %>
+	</div>
+	<br>
+
+	<div>
+		<%= f.label "Gender" %>
+		<%= f.radio_button :gender, "M" %> Male
+		<%= f.radio_button :gender, "F" %> Female
+	</div>
+	<br>
+
+	<%= f.submit "Create User" %>
+<% end %>

@@ -15,4 +15,25 @@ class UsersController < ApplicationController
     #render html: "<h1>Rendering HTML</h1>".html_safe
     redirect_to action: :list_users
   end
+
+  def new_user
+    @user = User.new
+    #render 'new_user_form_tag'
+  end
+
+  def create_user
+    #render plain: params
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to action: :list_users
+    else
+      render action: :new_user
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :age, :city, :gender)
+  end
 end
