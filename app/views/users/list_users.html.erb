@@ -11,11 +11,11 @@
 
 	<% @users.each do |user| %>
 		<tr>
-			<td><%= user.first_name %></td>
-			<td><%= user.last_name %></td>
+			<td><%= user.firstname %></td>
+			<td><%= user.lastname %></td>
 			<td><%= user.age %></td>
 			<td><%= user.city %></td>
-			<td><%= user.gender_string %></td> <%# for smaller function use in model else helper>
+			<td><%= user.gender_string %></td>
 		</tr>
 	<% end %>
 </table>

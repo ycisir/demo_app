@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def create_user
     #render plain: params
     @user = User.new(user_params)
+    @user.name = @user.fullname #just blunt way better way to do is callback later will do
     if @user.save
       redirect_to action: :list_users
     else
